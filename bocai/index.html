@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博彩通评级机构 - 权威平台安全评测与信誉排名指南</title>
+  <meta name="description" content="博彩通评级机构致力于为中文用户提供客观、严谨的博彩平台安全评级、信誉排名与风险提示，深度评测资金安全、出金效率与合规性，助您远离风险平台。" />
+  <meta name="keywords" content="博彩通评级机构,博彩评级,平台安全评测,信誉排名,资金安全,出金效率,风险提示,优质平台推荐" />
+  <style>
+    /* 全局重置与字体系统 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #1e2a3a;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 页眉 */
+    .site-header {
+      background: #0b1a2b;
+      padding: 16px 0;
+      border-bottom: 4px solid #f0b90b;
+    }
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      font-size: 2rem;
+      font-weight: 800;
+      background: #f0b90b;
+      color: #0b1a2b;
+      padding: 6px 12px;
+      border-radius: 8px;
+      letter-spacing: -1px;
+    }
+    .logo-text {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .logo-text span {
+      color: #f0b90b;
+      font-weight: 400;
+      font-size: 1rem;
+      margin-left: 8px;
+    }
+    .header-motto {
+      color: #b0c4d9;
+      font-size: 0.95rem;
+      border-left: 2px solid #f0b90b;
+      padding-left: 16px;
+      margin-left: 8px;
+    }
+    .header-contact {
+      color: #e0e9f2;
+      font-size: 0.9rem;
+    }
+    .header-contact strong {
+      color: #f0b90b;
+    }
+
+    /* 导航 */
+    .main-nav {
+      background: #112b45;
+      border-radius: 40px;
+      padding: 6px 18px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #d9e3ee;
+      font-weight: 500;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #f0b90b;
+      border-bottom-color: #f0b90b;
+    }
+
+    /* 首屏 Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f2840 0%, #1c3e5e 100%);
+      padding: 44px 0;
+      margin-bottom: 40px;
+      border-radius: 0 0 60px 60px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .hero-title {
+      color: white;
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .hero-title span {
+      color: #f0b90b;
+    }
+    .hero-sub {
+      color: #d0e0f0;
+      font-size: 1.2rem;
+      margin: 20px 0 28px;
+      max-width: 90%;
+    }
+    .hero-badge {
+      background: rgba(240, 185, 11, 0.15);
+      padding: 12px 18px;
+      border-radius: 40px;
+      display: inline-block;
+      color: #fae490;
+      font-weight: 500;
+      border: 1px solid rgba(240, 185, 11, 0.3);
+      margin-bottom: 24px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      color: white;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #f0b90b;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: #b6ccdf;
+    }
+    .hero-panel {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+    }
+    .panel-flag {
+      color: #f0b90b;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+    .rating-score {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .big-score {
+      font-size: 3.8rem;
+      font-weight: 900;
+      color: white;
+    }
+    .score-outof {
+      color: #b0c9dd;
+      font-size: 1.4rem;
+    }
+    .score-desc {
+      color: #d4e2ef;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed rgba(255,255,255,0.2);
+      padding-bottom: 16px;
+    }
+    .safety-meter {
+      margin: 16px 0 20px;
+    }
+    .meter-label {
+      display: flex;
+      justify-content: space-between;
+      color: #cbdae8;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .meter-bar {
+      background: #1b3e5c;
+      height: 10px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .meter-fill {
+      background: #f0b90b;
+      width: 92%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .btn-primary {
+      background: #f0b90b;
+      color: #0a1b2a;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-size: 1rem;
+      border: none;
+      cursor: default;
+      transition: 0.2s;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-outline {
+      border: 1px solid #f0b90b;
+      color: #f0b90b;
+      padding: 11px 26px;
+      border-radius: 60px;
+      font-weight: 500;
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* 信息卡片区块 */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 48px 0 24px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .section-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 5px;
+      height: 36px;
+      background: #f0b90b;
+      border-radius: 10px;
+    }
+    .rating-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .rating-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      border: 1px solid #e7edf3;
+      transition: 0.2s;
+    }
+    .rating-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .platform-name {
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .rank-badge {
+      background: #f0b90b;
+      color: #0b1a2b;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+    }
+    .card-features {
+      margin: 18px 0;
+    }
+    .card-features li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f3f7;
+      font-size: 0.95rem;
+    }
+    .card-features li::before {
+      content: "✓";
+      color: #2e7d32;
+      font-weight: 800;
+    }
+    .score-line {
+      display: flex;
+      justify-content: space-between;
+      background: #f1f5f9;
+      padding: 10px 14px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+    }
+    .score-highlight {
+      font-weight: 700;
+      color: #0b1a2b;
+    }
+
+    /* 评测标准区块 */
+    .criteria-section {
+      background: white;
+      border-radius: 28px;
+      padding: 32px;
+      margin: 40px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      border: 1px solid #e6ecf2;
+    }
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .criteria-item {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 20px 16px;
+    }
+    .criteria-icon {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #115293;
+    }
+    .criteria-item h3 {
+      font-size: 1.2rem;
+      margin: 12px 0 8px;
+    }
+    .criteria-item p {
+      font-size: 0.9rem;
+      color: #4d6278;
+    }
+
+    /* 最新报告/资讯 */
+    .news-list {
+      background: white;
+      border-radius: 24px;
+      padding: 24px 28px;
+      margin: 20px 0 40px;
+    }
+    .news-item {
+      display: flex;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid #e9eef3;
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .news-tag {
+      background: #eef2f6;
+      color: #1f3a57;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 30px;
+      margin-right: 20px;
+      min-width: 70px;
+      text-align: center;
+    }
+    .news-title {
+      font-weight: 500;
+      flex: 1;
+    }
+    .news-date {
+      color: #6f8ba3;
+      font-size: 0.85rem;
+    }
+
+    /* FAQ */
+    .faq-section {
+      margin: 48px 0 50px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid #dee7ef;
+    }
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #0b1a2b;
+    }
+    .faq-answer {
+      color: #425b70;
+      font-size: 0.95rem;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #0b1a2b;
+      color: #a8c0d4;
+      padding: 32px 0;
+      margin-top: 40px;
+      border-top: 3px solid #f0b90b;
+    }
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-copy {
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      color: #c6d6e4;
+    }
+    .footer-links a:hover {
+      color: #f0b90b;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .rating-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .criteria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .rating-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .criteria-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .main-nav {
+        border-radius: 20px;
+      }
+      .btn-group {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 页眉 -->
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="logo-area">
+        <div class="logo-icon">博</div>
+        <div class="logo-text">博彩通评级<span>机构</span></div>
+      </div>
+      <div class="header-motto">客观 · 严谨 · 安全评测</div>
+      <div class="header-contact">评级咨询 <strong>400 889 2025</strong></div>
+    </div>
+  </header>
+
+  <!-- 导航栏 -->
+  <nav class="main-nav container">
+    <div class="nav-links">
+      <a href="#" class="active">首页</a>
+      <a href="#">最新评级</a>
+      <a href="#">安全榜单</a>
+      <a href="#">评测标准</a>
+      <a href="#">曝光台</a>
+      <a href="#">帮助中心</a>
+    </div>
+  </nav>
+
+  <!-- 主视觉区域 -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">2025年第一季度评级更新</div>
+        <h1 class="hero-title">博彩通评级机构<br><span>安全交易与信誉保障</span></h1>
+        <p class="hero-sub">基于资金安全、出金效率、合规运营等维度，对主流平台进行独立评测，提供值得信赖的参考。</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">126</div>
+            <div class="stat-label">已评测平台</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">9.8</div>
+            <div class="stat-label">安全评分均值</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0</div>
+            <div class="stat-label">安全事故</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-flag">★ 本季度安全优选</div>
+        <div class="rating-score">
+          <span class="big-score">9.6</span>
+          <span class="score-outof">/10</span>
+        </div>
+        <div class="score-desc">
+          综合评级 · 皇冠平台 (国际牌照) 资金安全AAA，出金快至2小时
+        </div>
+        <div class="safety-meter">
+          <div class="meter-label">
+            <span>安全指数</span>
+            <span>92%</span>
+          </div>
+          <div class="meter-bar"><div class="meter-fill"></div></div>
+        </div>
+        <div class="btn-group">
+          <span class="btn-primary">查看完整报告</span>
+          <span class="btn-outline">对比平台</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 评级排行榜卡片（核心内容） -->
+  <div class="container">
+    <h2 class="section-title">本月高信誉评级平台</h2>
+    <div class="rating-grid">
+      <!-- 卡片1 -->
+      <article class="rating-card">
+        <div class="card-top">
+          <span class="platform-name">皇冠国际</span>
+          <span class="rank-badge">A+ 评级</span>
+        </div>
+        <ul class="card-features">
+          <li>资金安全 · 第三方托管</li>
+          <li>出金效率 · 平均2小时</li>
+          <li>合规牌照 · 库拉索 & MGA</li>
+        </ul>
+        <div class="score-line">
+          <span>综合评分</span>
+          <span class="score-highlight">9.6 / 10</span>
+        </div>
+      </article>
+      <!-- 卡片2 -->
+      <article class="rating-card">
+        <div class="card-top">
+          <span class="platform-name">永利皇宫</span>
+          <span class="rank-badge">A 评级</span>
+        </div>
+        <ul class="card-features">
+          <li>资金安全 · 银行级风控</li>
+          <li>出金效率 · 24小时内</li>
+          <li>合规 · 菲律宾PAGCOR</li>
+        </ul>
+        <div class="score-line">
+          <span>综合评分</span>
+          <span class="score-highlight">9.2 / 10</span>
+        </div>
+      </article>
+      <!-- 卡片3 -->
+      <article class="rating-card">
+        <div class="card-top">
+          <span class="platform-name">天博体育</span>
+          <span class="rank-badge">A- 评级</span>
+        </div>
+        <ul class="card-features">
+          <li>资金安全 · 备付金充足</li>
+          <li>出金效率 · 6小时处理</li>
+          <li>合规 · 直布罗陀授权</li>
+        </ul>
+        <div class="score-line">
+          <span>综合评分</span>
+          <span class="score-highlight">8.9 / 10</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- 评测标准概览 -->
+    <section class="criteria-section">
+      <h2 style="font-size:1.8rem; font-weight:700;">评级标准与评测维度</h2>
+      <p style="color:#3d5b76; margin-top:8px;">博彩通评级机构坚持独立、客观的评测体系，以下为核心维度：</p>
+      <div class="criteria-grid">
+        <div class="criteria-item">
+          <div class="criteria-icon">①</div>
+          <h3>资金安全</h3>
+          <p>是否采用分离账户、第三方存管及风险保证金制度。</p>
+        </div>
+        <div class="criteria-item">
+          <div class="criteria-icon">②</div>
+          <h3>出金效率</h3>
+          <p>提现申请处理时长、到账时间以及有无恶意延迟。</p>
+        </div>
+        <div class="criteria-item">
+          <div class="criteria-icon">③</div>
+          <h3>合规资质</h3>
+          <p>国际或地区监管牌照，是否公开可查。</p>
+        </div>
+        <div class="criteria-item">
+          <div class="criteria-icon">④</div>
+          <h3>客户服务</h3>
+          <p>7x24小时响应速度及问题解决率。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新评测资讯 -->
+    <div class="news-list">
+      <h3 style="font-size:1.6rem; margin-bottom:10px;">最新评测动态</h3>
+      <div class="news-item">
+        <span class="news-tag">风控预警</span>
+        <span class="news-title">某平台近期出金延迟，评级下调至B-</span>
+        <span class="news-date">2025-03-28</span>
+      </div>
+      <div class="news-item">
+        <span class="news-tag">评级调升</span>
+        <span class="news-title">亚洲娱乐城升级风控体系，评级上调至A</span>
+        <span class="news-date">2025-03-26</span>
+      </div>
+      <div class="news-item">
+        <span class="news-tag">安全提示</span>
+        <span class="news-title">警惕仿冒评级网站，认准官方认证标识</span>
+        <span class="news-date">2025-03-22</span>
+      </div>
+    </div>
+
+    <!-- FAQ 区块 -->
+    <section class="faq-section">
+      <h2 class="section-title">用户常见疑问</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">博彩通评级机构是官方组织吗？</div>
+          <div class="faq-answer">我们是一家独立的第三方评测机构，不隶属于任何博彩平台。所有评级均基于公开信息和实测，旨在提供客观参考。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">评级数据多久更新一次？</div>
+          <div class="faq-answer">每月进行一次常规更新，若平台出现重大安全事件或投诉，会启动临时复核并更新评级结果。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">如何举报疑似违规平台？</div>
+          <div class="faq-answer">您可通过页面底部的曝光台或客服邮箱提交线索，我们会在3个工作日内核查并反馈。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">评级高是否代表绝对安全？</div>
+          <div class="faq-answer">任何评级都无法承诺100%安全，但高评级意味着更严格的风控和良好的历史记录。请理性参考，分散风险。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-flex">
+      <div class="footer-copy">
+        © 2025 博彩通评级机构 | 本网站提供客观评测，请理性决策，远离非法博彩。
+      </div>
+      <div class="footer-links">
+        <a href="#">关于我们</a>
+        <a href="#">评测标准</a>
+        <a href="#">联系方式</a>
+        <a href="#">隐私条款</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
