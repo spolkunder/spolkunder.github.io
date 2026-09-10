@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通联公司-企业信息综合展示平台</title>
+    <meta name="description" content="通联公司业务涵盖信息技术服务、企业数字化解决方案、产业合作与咨询服务，致力于打造高效协同的企业发展生态。">
+    <meta name="keywords" content="通联公司,企业服务,数字化解决方案,信息技术,产业合作,咨询培训">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== Header & Navigation ===== */
+        .site-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            letter-spacing: 1px;
+        }
+
+        .brand-name span {
+            color: #2563eb;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .main-nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: #475569;
+            transition: color 0.2s;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+
+        .header-contact {
+            font-size: 15px;
+            color: #475569;
+            border-left: 1px solid #e2e8f0;
+            padding-left: 24px;
+        }
+
+        .header-contact strong {
+            color: #1e293b;
+            display: block;
+            font-size: 18px;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 50%, #f1f5f9 100%);
+            padding: 90px 0 80px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 44px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 .highlight {
+            color: #2563eb;
+            position: relative;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 32px;
+            margin-bottom: 36px;
+        }
+
+        .hero-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .hero-feature-item::before {
+            content: "✓";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background-color: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e40af;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background-color: #eff6ff;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 32px 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2563eb;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* ===== Intro / About Section ===== */
+        .intro-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 50px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 30px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 34px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .intro-card {
+            background-color: #f8fafc;
+            border-radius: 14px;
+            padding: 32px 28px;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .intro-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            background-color: #eff6ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .intro-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .intro-card p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* ===== Business Areas Section ===== */
+        .business-section {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .business-card {
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .business-card:hover {
+            border-color: #bfdbfe;
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+        }
+
+        .business-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .business-card h3 .num {
+            background-color: #2563eb;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+
+        .business-card ul li {
+            font-size: 14px;
+            color: #475569;
+            padding: 6px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .business-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== News Section ===== */
+        .news-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .news-layout {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 40px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: background-color 0.2s;
+        }
+
+        .news-item:hover {
+            background-color: #eff6ff;
+        }
+
+        .news-date {
+            min-width: 90px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 8px 4px;
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+        }
+
+        .news-date .day {
+            font-size: 26px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        .news-date .month {
+            font-size: 13px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .news-content p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .news-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #2563eb;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 12px;
+        }
+
+        .notices-panel {
+            background-color: #f8fafc;
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .notices-panel h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        .notice-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-item a {
+            font-size: 15px;
+            color: #334155;
+            transition: color 0.2s;
+        }
+
+        .notice-item a:hover {
+            color: #2563eb;
+        }
+
+        .notice-date {
+            font-size: 13px;
+            color: #94a3b8;
+            white-space: nowrap;
+            margin-left: 16px;
+        }
+
+        /* ===== Cooperation Section ===== */
+        .cooperation-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%);
+        }
+
+        .cooperation-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .partner-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+
+        .partner-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .partner-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e0e7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 26px;
+            color: #2563eb;
+        }
+
+        .partner-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+
+        .partner-card p {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .faq-grid {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background-color: #f8fafc;
+            border-radius: 12px;
+            padding: 24px 28px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .faq-item h3::before {
+            content: "Q";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            background-color: #2563eb;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .faq-item p {
+            font-size: 15px;
+            color: #475569;
+            padding-left: 28px;
+            line-height: 1.7;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-section {
+            padding: 70px 0;
+            background-color: #f1f5f9;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .contact-item {
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding: 32px 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-item .contact-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* ===== Footer ===== */
+        .site-footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 50px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-top: 16px;
+        }
+
+        .footer-col h4 {
+            color: #e2e8f0;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #93c5fd;
+        }
+
+        .copyright {
+            border-top: 1px solid #1e293b;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-stats {
+                max-width: 500px;
+            }
+
+            .business-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cooperation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            .main-nav ul {
+                gap: 24px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-contact {
+                border-left: none;
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .business-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cooperation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .section-header h2 {
+                font-size: 26px;
+            }
+
+            .business-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cooperation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand-logo">
+                <div class="brand-icon">通</div>
+                <div class="brand-name">通联<span>公司</span></div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">业务领域</a></li>
+                    <li><a href="#">新闻动态</a></li>
+                    <li><a href="#">合作生态</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <strong>400-800-2000</strong>
+                服务热线
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>通联公司 — <span class="highlight">连接产业价值</span>，共创数字未来</h1>
+                <p>通联公司专注于企业数字化升级、产业资源整合与专业咨询服务，通过高效协同的解决方案，助力企业与机构实现可持续增长。</p>
+                <div class="hero-features">
+                    <span class="hero-feature-item">一站式企业服务</span>
+                    <span class="hero-feature-item">行业深度洞察</span>
+                    <span class="hero-feature-item">技术驱动创新</span>
+                    <span class="hero-feature-item">专业顾问团队</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#" class="btn-primary">了解我们的服务</a>
+                    <a href="#" class="btn-outline">加入合作伙伴</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">年行业深耕</div>
+                </div>
+                <div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">合作企业伙伴</div>
+                </div>
+                <div>
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">客户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">关于通联</span>
+                <h2>打造高效协同的企业发展生态</h2>
+                <p>通联公司始终立足产业前沿，以专业能力和开放平台，为不同规模的机构提供定制化支持，推动产业上下游高效合作。</p>
+            </div>
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <div class="card-icon">🏢</div>
+                    <h3>产业资源整合</h3>
+                    <p>依托多年在信息技术、制造、金融等领域的积累，为合作伙伴链接优质资源，打通业务链条，实现协同共赢。</p>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>数字化升级服务</h3>
+                    <p>提供从战略咨询到系统落地的全流程数字化方案，帮助企业提升运营效率，适应数字经济时代的发展节奏。</p>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>专业咨询与培训</h3>
+                    <p>组建行业专家顾问团队，开展企业内训、管理咨询与政策解读服务，助力组织能力持续进化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Areas -->
+    <section class="business-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">核心业务</span>
+                <h2>聚焦四大业务领域</h2>
+                <p>以客户需求为中心，构建专业、多元、可持续的服务体系。</p>
+            </div>
+            <div class="business-grid">
+                <div class="business-card">
+                    <h3><span class="num">01</span>信息技术服务</h3>
+                    <ul>
+                        <li>企业级软件定制开发</li>
+                        <li>数据平台建设与运维</li>
+                        <li>网络安全解决方案</li>
+                        <li>云计算架构咨询</li>
+                    </ul>
+                </div>
+                <div class="business-card">
+                    <h3><span class="num">02</span>产业投资与孵化</h3>
+                    <ul>
+                        <li>创新企业早期投资</li>
+                        <li>产业园区运营支持</li>
+                        <li>创业项目孵化服务</li>
+                        <li>资本对接与投后管理</li>
+                    </ul>
+                </div>
+                <div class="business-card">
+                    <h3><span class="num">03</span>供应链协同管理</h3>
+                    <ul>
+                        <li>供应链数字化平台</li>
+                        <li>采购与供应商管理</li>
+                        <li>物流仓配优化方案</li>
+                        <li>供应链金融对接</li>
+                    </ul>
+                </div>
+                <div class="business-card">
+                    <h3><span class="num">04</span>咨询与培训服务</h3>
+                    <ul>
+                        <li>企业战略与组织咨询</li>
+                        <li>数字化转型培训</li>
+                        <li>行业政策解读</li>
+                        <li>领导力与管理课程</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">新闻动态</span>
+                <h2>通联最新资讯与公告</h2>
+                <p>了解通联公司近期动态、行业观察及重要通知。</p>
+            </div>
+            <div class="news-layout">
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-date">
+                            <div class="day">08</div>
+                            <div class="month">2025-02</div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-tag">公司要闻</span>
+                            <h3>通联公司发布2025年度产业合作计划</h3>
+                            <p>面向产业链上下游伙伴，推出涵盖技术共创、市场协同等多维度的合作机制，共同构建开放生态。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <div class="day">15</div>
+                            <div class="month">2025-01</div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-tag">行业观察</span>
+                            <h3>数字化赋能中小企业转型实践分享会举办</h3>
+                            <p>通联与多家机构共同探讨企业数字化转型中的痛点与解决路径，分享一线实践经验。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">
+                            <div class="day">03</div>
+                            <div class="month">2025-01</div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-tag">合作动态</span>
+                            <h3>通联公司荣获年度优秀服务企业称号</h3>
+                            <p>凭借专业服务能力与良好客户口碑，通联在年度行业评选中受到认可。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="notices-panel">
+                    <h3>📢 重要公告</h3>
+                    <div class="notice-item">
+                        <a href="#">关于2025年度合作伙伴招募的通知</a>
+                        <span class="notice-date">2025-02-10</span>
+                    </div>
+                    <div class="notice-item">
+                        <a href="#">通联官网全新改版上线公告</a>
+                        <span class="notice-date">2025-01-20</span>
+                    </div>
+                    <div class="notice-item">
+                        <a href="#">春节期间服务时间调整安排</a>
+                        <span class="notice-date">2025-01-15</span>
+                    </div>
+                    <div class="notice-item">
+                        <a href="#">企业数字化专项咨询开放预约</a>
+                        <span class="notice-date">2025-01-05</span>
+                    </div>
+                    <div class="notice-item">
+                        <a href="#">2024年度社会责任报告发布</a>
+                        <span class="notice-date">2024-12-28</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cooperation Section -->
+    <section class="cooperation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">合作伙伴</span>
+                <h2>与优秀伙伴同行</h2>
+                <p>通联公司与众多行业领先机构建立深度合作，共同推动产业创新。</p>
+            </div>
+            <div class="cooperation-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">华</div>
+                    <h4>华信集团</h4>
+                    <p>产业投资与战略合作</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">云</div>
+                    <h4>云启科技</h4>
+                    <p>数字化解决方案伙伴</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">智</div>
+                    <h4>智联数据</h4>
+                    <p>数据服务与平台共建</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">创</div>
+                    <h4>创远咨询</h4>
+                    <p>管理咨询与培训合作</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">常见问题</span>
+                <h2>您可能关心的问题</h2>
+                <p>关于通联公司服务与合作的相关解答。</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>通联公司主要服务于哪些类型的客户？</h3>
+                    <p>通联公司的服务对象涵盖各类企业、政府机构及产业园区，既包括寻求数字化转型的中大型企业，也支持初创企业的孵化与成长。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何与通联公司开展业务合作？</h3>
+                    <p>您可以通过页面底部的联系电话或联系表单与我们取得联系。我们的商务团队会在收到信息后尽快与您沟通，了解需求并提供初步合作思路。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>通联公司的服务收费模式是怎样的？</h3>
+                    <p>根据具体服务内容和项目范围，我们提供包括项目制、顾问制、培训课程等多种合作模式。具体费用将在需求确认后提供详细方案。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>通联公司是否提供定制化的数字化解决方案？</h3>
+                    <p>是的，定制化是通联的核心服务之一。我们会深入了解企业的业务场景和特殊要求，结合行业最佳实践，设计专属的解决方案。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">联系我们</span>
+                <h2>期待与您深入交流</h2>
+                <p>无论您是寻求服务支持，还是探讨合作可能，我们都欢迎您的垂询。</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>服务热线</h3>
+                    <p>400-800-2000<br>周一至周五 9:00-18:00</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <h3>电子邮箱</h3>
+                    <p>contact@tonglian.com<br>商务合作：bd@tonglian.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>办公地址</h3>
+                    <p>上海市浦东新区世纪大道100号<br>环球金融中心28层</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="brand-name" style="color:#e2e8f0;">通联<span style="color:#93c5fd;">公司</span></div>
+                    <p>通联公司致力于通过专业服务与技术创新，连接产业价值，助力客户实现高质量、可持续的发展。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">核心业务</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">资料下载</a></li>
+                        <li><a href="#">合作伙伴入口</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律条款</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">沪ICP备00000000号</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 通联公司 版权所有
+            </div>
+        </div>
+    </footer>
+</body>
+                          </html>
